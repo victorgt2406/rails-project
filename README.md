@@ -1,24 +1,23 @@
-# README
+# Rails project
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Devbox with rails
+devbox init
+devbox generate direnv
+devbox add "ruby@3.3.4" "nodejs@20.17" "postgresql@15.7"
+initdb
 
-Things you may want to cover:
+gem install rails
+rails new . --skip-javascript --database=postgresql
 
-* Ruby version
+gem install bundler
+bundle install
 
-* System dependencies
+## Config de la base de datos
+Ponemos los campos de user password y database - lo mismo en el docker compose.
 
-* Configuration
+Por algo que no logro comprender al dejar el host como localhost ya le permite conectarse con la base de datos postgres local del docker
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Config de vite rails
+gem 'vite_rails' to gemfile
+bundle install
+run: bundle exec vite install
